@@ -3,15 +3,16 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "esbuild --bundle --sourcemap --platform=node --outdir=dist --watch src/index.tsx",
+    "build": "esbuild --bundle --sourcemap --platform=node --outdir=dist src/index.tsx",
+    "start": "node dist/index.js"
   },
   "dependencies": {
-    "astro": "^4.10.3",
-    "@astrojs/check": "^0.7.0",
-    "typescript": "^5.4.5"
+    "react": "^0.0.0-experimental-740a4f7a-20250325",
+    "react-dom": "^0.0.0-experimental-740a4f7a-20250325"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.1",
+    "typescript": "^5.8.2"
   }
 }
